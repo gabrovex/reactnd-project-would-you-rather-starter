@@ -4,7 +4,9 @@ import { handleInitialData } from '../actions/shared'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import LoadingBar from 'react-redux-loading'
 import Login from './Login'
-
+import Dashboard from './Dashboard'
+import Page404 from './Page404'
+import Nav from './Nav'
 class App extends Component {
   componentDidMount() {
     this.props.dispatch(handleInitialData())
@@ -14,13 +16,19 @@ class App extends Component {
       <Router>
         <Fragment>
           <LoadingBar />
-          <div>
+          <main>
             {!this.props.isAuthed ? (
               <Route path="/" component={Login} />
             ) : (
-              <div>aaaa</div>
+              <Fragment>
+                <Nav />
+                <Switch>
+                  <Route path="/" exact component={Dashboard} />
+                  <Route component={Page404} />
+                </Switch>
+              </Fragment>
             )}
-          </div>
+          </main>
         </Fragment>
       </Router>
     )

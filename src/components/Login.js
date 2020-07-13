@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { loginUser } from '../actions/authedUser';
+import { setUser } from '../actions/authedUser';
 
 class Login extends Component {
   handleChangeUser = (e) => {
     const selectedUser = e.target.value;
-    this.props.dispatch(loginUser(selectedUser));
+    this.props.dispatch(setUser(selectedUser));
   };
 
   render() {

@@ -1,16 +1,8 @@
-export const LOGIN_USER = 'LOGIN_USER';
-export const LOGOUT_USER = 'LOGOUT_USER';
+export const SET_USER = 'SET_USER';
 
-export function loginUser(userId) {
+export function setUser(userId = null) {
   return {
-    type: LOGIN_USER,
+    type: SET_USER,
     id: userId,
-  };
-}
-
-export function logoutUser() {
-  return {
-    type: LOGOUT_USER,
-    id: null,
   };
 }
