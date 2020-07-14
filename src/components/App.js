@@ -5,8 +5,10 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import LoadingBar from 'react-redux-loading'
 import Login from './Login'
 import Dashboard from './Dashboard'
+import Question from './Question'
 import Page404 from './Page404'
 import Nav from './Nav'
+
 class App extends Component {
   componentDidMount() {
     this.props.dispatch(handleInitialData())
@@ -24,6 +26,7 @@ class App extends Component {
                 <Nav />
                 <Switch>
                   <Route path="/" exact component={Dashboard} />
+                  <Route path="/questions/:id" exact component={Question} />
                   <Route component={Page404} />
                 </Switch>
               </Fragment>

@@ -7,7 +7,7 @@ class Dashboard extends Component {
   render() {
     return (
       <div>
-        <h3>Questions</h3>
+        <h1>Questions</h1>
         <ul >
           {this.props.questionCategories.map((category, i) => {
             return (
@@ -15,7 +15,7 @@ class Dashboard extends Component {
                 <h2>{category.title}</h2>
                 {category.ids.map((id) =>
                   <li  key={id}>
-                    <Question id={id}/>
+                    <Question id={id} isPreview={true}/>
                   </li>
                 )}
               </div>
@@ -27,7 +27,7 @@ class Dashboard extends Component {
   }
 }
 
-function mapStateToProps({ authedUser, users, questions }) {
+function mapStateToProps({ authedUser, questions }) {
   const answeredIds = [];
   const unansweredIds = [];
   Object.keys(questions)
