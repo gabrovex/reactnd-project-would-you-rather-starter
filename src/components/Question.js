@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import QuestionPreview from './QuestionPreview'
 import QuestionAnswered from './QuestionAnswered'
+import QuestionUnanswered from './QuestionUnanswered'
 import Page404 from './Page404'
 
 class Question extends Component {
@@ -14,7 +15,7 @@ class Question extends Component {
       <div>
             Asked by {author.name}
             <img src={author.avatarURL} alt={author.name} width="50" />
-            { isPreview ?  <QuestionPreview id={id} /> : isAnswered ? <QuestionAnswered id={id} /> : ''}             
+            { isPreview ?  <QuestionPreview id={id} /> : isAnswered ? <QuestionAnswered id={id} /> : <QuestionUnanswered id={id} />}             
       </div>
     );
   }

@@ -2,14 +2,14 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {getFormattedAnswered} from '../utils/helpers'
 
-class QuestionStats extends Component {
+class QuestionAnswered extends Component {
   render() {
     const { question } = this.props;
     
     return (  
       <div>
-          {question.options.map((option) => 
-            <div className={option.isChosen ? 'answeredQuestion' : ''}>
+          {question.options.map((option, i) => 
+            <div key={i} className={option.isChosen ? 'answeredQuestion' : ''}>
               {`${option.text} - ${option.votes}/${question.totalVotes}`}
             </div>
           )}
@@ -25,4 +25,4 @@ function mapStateToProps({ authedUser, questions }, { id }) {
   };
 }
 
-export default connect(mapStateToProps)(QuestionStats);
+export default connect(mapStateToProps)(QuestionAnswered);
