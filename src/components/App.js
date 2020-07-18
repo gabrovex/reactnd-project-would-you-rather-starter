@@ -6,6 +6,7 @@ import LoadingBar from 'react-redux-loading'
 import Login from './Login'
 import Dashboard from './Dashboard'
 import Question from './Question'
+import LeaderBoard from './LeaderBoard'
 import Page404 from './Page404'
 import Nav from './Nav'
 
@@ -27,6 +28,7 @@ class App extends Component {
                 <Switch>
                   <Route path="/" exact component={Dashboard} />
                   <Route path="/questions/:id" exact component={Question} />
+                  <Route path="/leaderboard" exact component={LeaderBoard} />
                   <Route component={Page404} />
                 </Switch>
               </Fragment>

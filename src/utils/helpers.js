@@ -19,3 +19,14 @@ export function getFormattedAnswered(question, userId){
         totalVotes
     }
 }
+
+export function getUserScore(user){
+    return {
+        id: user.id,
+        name: user.name,
+        avatarURL: user.avatarURL,
+        answerCount: Object.keys(user.answers).length,
+        questionCount: user.questions.length,
+        totalScore: Object.keys(user.answers).length + user.questions.length
+    }
+}
