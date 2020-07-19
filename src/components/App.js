@@ -8,6 +8,7 @@ import Dashboard from './Dashboard'
 import Question from './Question'
 import LeaderBoard from './LeaderBoard'
 import Page404 from './Page404'
+import QuestionCreate from './QuestionCreate'
 import Nav from './Nav'
 
 class App extends Component {
@@ -29,6 +30,7 @@ class App extends Component {
                   <Route path="/" exact component={Dashboard} />
                   <Route path="/questions/:id" exact component={Question} />
                   <Route path="/leaderboard" exact component={LeaderBoard} />
+                  <Route path="/add" exact component={QuestionCreate} />
                   <Route component={Page404} />
                 </Switch>
               </Fragment>
